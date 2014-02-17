@@ -1,0 +1,1 @@
+/* Run the 'DIMP.sql' file to set the database. */ 

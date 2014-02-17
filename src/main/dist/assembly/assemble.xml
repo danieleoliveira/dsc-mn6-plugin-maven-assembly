@@ -1,0 +1,69 @@
+<assembly>
+
+	<id>distribution</id>
+
+	<formats>
+<!-- 		<format>war</format> -->
+<!-- 		<format>jar</format> -->
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>true</includeBaseDirectory>
+	
+	<fileSets>
+
+		<fileSet>
+			<directory>src/main/dist</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>README.txt</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/main/dist</directory>
+			<outputDirectory>distribution</outputDirectory>
+			<includes>
+				<include>run.bat</include>
+			</includes>
+		</fileSet>
+
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>distribution/lib</outputDirectory>
+			<includes>
+				<include>*.war</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/main/dist/manuals</directory>
+			<outputDirectory>distribution/manuals</outputDirectory>
+			<includes>
+				<include>Product Manual v01.doc</include>
+				<include>User Manual v01.doc</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/main/dist/database</directory>
+			<outputDirectory>distribution/database</outputDirectory>
+			<includes>
+				<include>DIMP.sql</include>
+			</includes>
+		</fileSet>
+
+	</fileSets>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>distribution/project/1.0-dsc-mn6-plugin-maven-assembly</outputDirectory>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>junit:junit</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+
+</assembly>
